@@ -1,6 +1,9 @@
 import { useCallback, useEffect, useState, useRef } from "react";
-import { getUsers } from "../api/ApiConfing";
-import Loading from "../components/loading/Loading";
+import { Link } from "react-router-dom";
+
+import { getUsers } from "../../api/ApiConfing";
+
+import Loading from "../../components/loading/Loading";
 
 import "./home.scss";
 
@@ -41,16 +44,25 @@ const Home = () => {
           return (
             <div className="list" key={index}>
               <div className="list_item_content">
-                <img
-                  className="home_images"
-                  src={`${user.imageUrl + "?q=" + user.id} `}
-                />
-                <div className="list_item_content_description">
-                  <strong key={index}>{`${user.name} ${user.lastName}`}</strong>
-                </div>
-                <div className="list_item_content_description">
-                  <div>{`${user.title}`}</div>
-                </div>
+                <Link
+                  style={{ textDecoration: "none", color: "black" }}
+                  to={`/users/${user.id}`}
+                >
+                  <img
+                    className="home_images"
+                    alt=""
+                    src={`${user.imageUrl + "?q=" + user.id} `}
+                  />
+                  <div className="list_item_content_description">
+                    <strong
+                      key={index}
+                    >{`${user.name} ${user.lastName}`}</strong>
+                  </div>
+
+                  <div className="list_item_content_description">
+                    <div>{`${user.title}`}</div>
+                  </div>
+                </Link>
               </div>
             </div>
           );
