@@ -29,7 +29,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="home">
+    <div className="list_container">
       {data.map((user, index) => {
         if (data.length === index + 1) {
           return (
@@ -39,15 +39,17 @@ const Home = () => {
           );
         } else {
           return (
-            <div className="home_container">
-              <div className="home_item">
+            <div className="list" key={index}>
+              <div className="list_item_content">
                 <img
                   className="home_images"
                   src={`${user.imageUrl + "?q=" + user.id} `}
                 />
-                <div className="home_description">
+                <div className="list_item_content_description">
                   <strong key={index}>{`${user.name} ${user.lastName}`}</strong>
-                  <div className="title">{`${user.title}`}</div>
+                </div>
+                <div className="list_item_content_description">
+                  <div>{`${user.title}`}</div>
                 </div>
               </div>
             </div>
