@@ -1,0 +1,28 @@
+.home {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  max-width: 1200px;
+  margin: 0 auto;
+  .home_container {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    .home_item {
+      margin: 10px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+    .home_description{
+        padding: 2px 10px;
+    }
+  }
+
+  .home_images {
+    width: 100%;
+  }
+  strong {
+    font-weight: bold;
+  }
+}

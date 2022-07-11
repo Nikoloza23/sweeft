@@ -1,14 +1,8 @@
-import axios from "axios";
-
-export const fetchUser = (page) => {
-  return axios({
-    method: "GET",
-    url: `https://api.instantwebtools.net/v1/passenger?page&size=20`,
-  })
-    .then((res) => {
-      return res.data.data;
-    })
-    .catch((err) => {
-      return err;
-    });
+export const getUsers = async (page) => {
+  const users = await (
+    await fetch(
+      "http://sweeftdigital-intern.eu-central-1.elasticbeanstalk.com/user/1/100?q=${id}"
+    )
+  ).json();
+  return users.list;
 };

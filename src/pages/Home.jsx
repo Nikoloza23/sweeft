@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState, useRef } from "react";
-import { fetchUser } from "../api/ApiConfing";
-
+import { getUsers } from "../api/ApiConfing";
 import Loading from "../components/loading/Loading";
 
 import "./home.scss";
@@ -13,7 +12,7 @@ const Home = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetchUser(page).then((res) => {
+    getUsers(page).then((res) => {
       setData((prev) => [...prev, ...res]);
       setIsLoading(false);
     });
@@ -30,7 +29,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="App">
+    <div className="home">
       {data.map((user, index) => {
         if (data.length === index + 1) {
           return (
@@ -39,7 +38,20 @@ const Home = () => {
             </div>
           );
         } else {
-          return <div key={index}>{user.name}</div>;
+          return (
+            <div className="home_container">
+              <div className="home_item">
+                <img
+                  className="home_images"
+                  src={`${user.imageUrl + "?q=" + user.id} `}
+                />
+                <div className="home_description">
+                  <strong key={index}>{`${user.name} ${user.lastName}`}</strong>
+                  <div className="title">{`${user.title}`}</div>
+                </div>
+              </div>
+            </div>
+          );
         }
       })}
       {isLoading && <Loading />}
