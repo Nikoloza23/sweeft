@@ -13,7 +13,6 @@ const UserDetail = ({ data }) => {
               <strong>
                 {data.prefix}
                 {data.name}
-
                 {data.lastName}
               </strong>
             </div>
@@ -41,6 +40,7 @@ const UserDetail = ({ data }) => {
               <span>Job Type:</span>
               {data.jobType}
             </div>
+            <br />
           </fieldset>
           <fieldset className="right_info">
             <legend>Address</legend>
@@ -70,6 +70,7 @@ const UserDetail = ({ data }) => {
               <span>ZIP :</span>
               {data.address?.zipCode}
             </div>
+            <br />
           </fieldset>
         </div>
         <div>

@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { getDetails } from "../../api/ApiConfing";
-import { UserDetail } from "../../components";
-import { Loader } from "../../components/loading/Loader";
-
-import "./details.scss";
+import { getDetails } from "../api/ApiConfing";
+import { UserDetail } from "../components";
+import { Loader } from "../components/loading/Loader";
 
 //Here is details about animal wich you clicked
 const Details = () => {
