@@ -2,7 +2,8 @@ import { useCallback, useEffect, useState, useRef } from "react";
 
 import { getUsers } from "../api/ApiConfing";
 import { Loader } from "../components/loading/Loader";
-import UserCard from "../components/usercard/UserCard";
+
+import { UserCard } from "../components";
 
 const Home = () => {
   const [page, setPage] = useState(1);
