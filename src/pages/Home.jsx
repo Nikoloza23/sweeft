@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState, useRef } from "react";
 
 import { getUsers } from "../api/ApiConfing";
-import Loading from "../components/loading/Loading";
+import { Loader } from "../components/loading/Loader";
 import UserCard from "../components/usercard/UserCard";
 
 const Home = () => {
@@ -45,7 +45,7 @@ const Home = () => {
           );
         }
       })}
-      {isLoading && <Loading />}
+      {isLoading && <Loader />}
     </div>
   );
 };
