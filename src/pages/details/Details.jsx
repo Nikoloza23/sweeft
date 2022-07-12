@@ -1,7 +1,7 @@
 import "./details.scss";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
-import { getDetails } from "../../api/ApiConfing";
+import { getDetails } from "../../api/apiConfing";
 import { UserDetail } from "../../components";
 const Details = () => {
   const [isLoading, setIsLoading] = useState();
