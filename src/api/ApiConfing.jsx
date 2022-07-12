@@ -1,4 +1,3 @@
-
 export const getUsers = async (page) => {
   const users = await (
     await fetch(
@@ -18,10 +17,10 @@ export const getDetails = async (id) => {
 };
 
 export const getUserFriends = async (id) => {
-  const friends = await (
+  const users = await (
     await fetch(
       `http://sweeftdigital-intern.eu-central-1.elasticbeanstalk.com/user/${id}/friends/1/16`
     )
   ).json();
-  return friends;
+  return users.list;
 };

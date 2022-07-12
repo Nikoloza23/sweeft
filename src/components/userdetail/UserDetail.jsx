@@ -1,3 +1,4 @@
+import { UserFriends } from "../../components";
 import "./userdetail.scss";
 
 const UserDetail = ({ data }) => {
@@ -72,8 +73,11 @@ const UserDetail = ({ data }) => {
           </fieldset>
         </div>
         <div>
-          <div  style={{padding: "20px"}} className="breadcrubms">Niko</div>
-          <h2 style={{marginLeft: "10px"}}>Frineds:</h2>
+          <div style={{ padding: "20px" }} className="breadcrubms">
+            Niko
+          </div>
+          <h2 style={{ marginLeft: "10px" }}>Frineds:</h2>
+          <UserFriends />
         </div>
       </div>
     </div>
