@@ -1,12 +1,17 @@
 import { UserFriends } from "../../components";
 import "./userdetail.scss";
+import { useSelector } from "react-redux";
 
+import { Link } from "react-router-dom";
+
+// Here is information about it
 const UserDetail = ({ data }) => {
+  const Lastusers = useSelector((state) => state.lastUser);
   return (
     <div className="details_container">
       <div className="header_wrapper">
         <div className="header">
-          <img src={data.imageUrl} alt="" />
+          <img src={`${data.imageUrl + "?q=" + data.id} `} alt="" />
           <fieldset className="left_info">
             <legend>Info</legend>
             <div>
@@ -74,8 +79,31 @@ const UserDetail = ({ data }) => {
           </fieldset>
         </div>
         <div>
-          <div style={{ padding: "20px" }} className="breadcrubms">
-            Niko
+          <div
+            style={{
+              padding: "20px",
+              display: "flex",
+            }}
+            className="breadcrubms"
+          >
+            {Lastusers.length !== 0
+              ? Lastusers.map((user) => {
+                  return (
+                    <div
+                      style={{
+                        marginLeft: "10px",
+                        display: "flex",
+                      }}
+                    >
+                      <Link to={`/users/${user.id}`}>
+                        {user.prefix}
+                        {user.name}
+                        {user.lastName}
+                      </Link>
+                    </div>
+                  );
+                })
+              : null}
           </div>
           <h2 style={{ marginLeft: "10px" }}>Frineds:</h2>
           <UserFriends />

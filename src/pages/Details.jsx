@@ -4,7 +4,7 @@ import { getDetails } from "../api/ApiConfing";
 import { UserDetail } from "../components";
 import { Loader } from "../components/loading/Loader";
 
-//Here is details about animal wich you clicked
+//Here is information about the user wich you selected
 const Details = () => {
   const [isLoading, setIsLoading] = useState();
   const [data, setData] = useState([]);

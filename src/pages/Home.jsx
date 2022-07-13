@@ -5,6 +5,7 @@ import { Loader } from "../components/loading/Loader";
 
 import { UserCard } from "../components";
 
+//Home Page
 const Home = () => {
   const [page, setPage] = useState(1);
   const [data, setData] = useState([]);

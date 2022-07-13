@@ -1,12 +1,12 @@
 @use "../../sass/index.scss" as *;
 
 .details_container {
-  max-width: 1200px;
+  max-width: $screen-size;
   margin: $screen-content;
 
   .left_info {
     margin-left: 20px;
-    width: 100%;
+    width: $max-content;
     span {
       text-decoration: underline;
       margin-left: 10px;
@@ -21,8 +21,8 @@
   }
 
   legend {
-    padding-inline-start: 2px;
-    padding-inline-end: 2px;
+    padding-inline-start: $iniline;
+    padding-inline-end: $iniline;
     font-size: 20px;
     margin-bottom: 10px;
   }
@@ -37,14 +37,9 @@
     }
   }
   .right_info {
-    margin-left: 20px;
-    width: 30vw;
-    height: 16.5vw;
-    strong {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 10px;
-    }
+    padding: 0px 0px 10px 0px;
+    margin-left: 10px;
+    height: max-content;
 
     span {
       text-decoration: underline;

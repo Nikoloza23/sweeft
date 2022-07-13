@@ -5,6 +5,7 @@ import { Loader } from "../loading/Loader";
 
 import { UserCard } from "..";
 
+//Here are the user's friends
 const UserFriends = () => {
   const [page, setPage] = useState(1);
   const [data, setData] = useState([]);

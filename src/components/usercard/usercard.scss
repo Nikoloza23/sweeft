@@ -3,7 +3,7 @@
 .list_container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  max-width: 1200px;
+  max-width: $screen-size;
   margin: $screen-content;
   .list {
     flex-wrap: wrap;
@@ -14,7 +14,7 @@
       border: 1px solid #ccc;
       cursor: pointer;
       .home_images {
-        width: 100%;
+        width: $max-content;
       }
     }
     .list_item_content_description {
